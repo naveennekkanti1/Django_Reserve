@@ -1,0 +1,46 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="icon" type="text/css" href="{% static 'images/logo.jpeg' %}">
+    <script src="https://kit.fontawesome.com/aa83cdd7e7.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'jquery/sample.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-gradient bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="#" style="color: white;"><img src="{% static 'images/logo.jpeg' %}" class="rounded-circle" width="30px" height="30px" position="left"> SRM Bus Reservation </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{% url 'home' %}" style="color: white;">Home</a>
+                {% if user.is_authenticated %}
+                    {% if user.is_staff %}
+                        <a class="nav-item nav-link" href="{% url 'admin:index' %}" style="color: white;">Admin</a>
+                    {% else %}
+                        <a class="nav-item nav-link" href="{% url 'findbus' %}" style="color: white;">Find Bus</a>
+                        <a class="nav-item nav-link" href="{% url 'seebookings' %}" style="color: white;">See Bookings</a>
+                    {% endif %}
+                    <a class="nav-item nav-link" href="{% url 'signout' %}" style="color: white;">Logout</a>
+                {% else %}
+                    <a class="nav-item nav-link" href="{% url 'signup' %}" style="color: white;">Registration</a>
+                    <a class="nav-item nav-link" href="{% url 'signin' %}" style="color: white;">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

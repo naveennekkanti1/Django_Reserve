@@ -1,0 +1,57 @@
+body{
+    background-color: black;
+}
+.col-md-6 h3{
+      color:aqua;
+}
+.col-md-6 h5{
+      color:blue;
+}
+.sub-title{
+    color:aqua;
+}
+.col-md-6 p {
+    color: #fff; /* Set the text color to white */
+}
+.card {
+    background-color:blanchedalmond; /* Set the blue background color for the card */
+    background-image: url("{% static 'images/bus_reservation_bg.jpg' %}"); /* Set the background image */
+    background-size: cover; /* Adjust the background image size */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
+    background-position: center; /* Center the background image */
+    border: none; /* Remove the card border */
+    border-radius: 15px; /* Add border-radius for rounded corners */
+}
+
+.card .card-body {
+    padding: 30px; /* Add padding to the card body */
+}
+
+.card .card-title {
+    color:black; /* Set the text color for the card title */
+    font-size: 36px; /* Adjust the font size for the card title */
+    font-weight: bold; /* Make the card title bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+}
+
+.card .card-text {
+    color: black; /* Set the text color for the card text */
+    font-size: 20px; /* Adjust the font size for the card text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better visibility */
+}
+.table thead th {
+    background-color: #007bff;
+    color: #fff; 
+}
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+.table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa; 
+}
+.table tbody td {
+    color: #333;
+}
+
+  
+ 

@@ -1,0 +1,55 @@
+{% extends 'myapp/base.html' %} {% block content %}
+{% load static %}
+<!-- The Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Booking Details</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Bus name:</b> {{book.bus_name}}</li>
+                    <li class="list-group-item"><b>Starting point:</b> {{book.source}}</li>
+                    <li class="list-group-item"><b>Destination point:</b> {{book.dest}}</li>
+                    <li class="list-group-item"><b>Number of seats:</b> {{book.nos}}</li>
+                    <li class="list-group-item"><b>Price:</b> {{book.price}}</li>
+                    <li class="list-group-item"><b>Cost:</b> {{cost}}</li>
+                    <li class="list-group-item"><b>Date:</b> {{book.date}}</li>
+                    <li class="list-group-item"><b>Time:</b> {{book.time}}</li>
+                </ul>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer py-1">
+                <button type="button" class="btn btn-secondary btn-sm rounded-0 text-light" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center mt-4">
+    <div class="card" style="width: max-content;">
+        <img class="card-img-top" src="{% static 'images/bussafety.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+            <h1>Thanks for Booking!</h1>
+            <p>Thank you for booking with us. We hope you have a pleasant journey!</p>
+            <p>For Bookings details please check your mail !!!</p>
+            <p>Company Name: SRM Corporation Reservation</p>
+            <p>Contact Information: srmcorporationservices@gmail.com | Phone: +91 9646476784</p>
+        </div>
+      </div>
+</div>
+
+
+<div class="text-center">
+    <form action="{% url 'home' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary rounded-0 col-lg-4 col-md-5 col-sm-6 col-xs-6 mt-3">OK</button>
+    </form>
+</div>
+{% endblock %}

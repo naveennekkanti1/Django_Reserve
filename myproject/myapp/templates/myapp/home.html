@@ -1,0 +1,84 @@
+{% extends 'myapp/base.html' %} 
+{% block title %}Home{% endblock %}
+{% load static%}
+{% block content %}
+<div class="container py-5">
+    <div class="card bg-gradient bg-danger">
+        <div class="card-body">
+            <h2 class="my-3 text-center text-light">SRM Bus Reservation</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-body">
+                    <h3 class="card-title">Welcome to SRM Bus Reservation</h3>
+                    <h6 class="card-text">Customer Support: The inclusion of customer support is essential for enhancing user satisfaction and resolving any queries or issues they might have during the booking process. It may include multiple support channels such as a dedicated helpline, email support, or live chat.</h6>
+                    <h6 class="card-text">Find Bus: The "Find Bus" feature allows users to search and discover available bus routes, schedules, and availability for their desired travel dates. Users can input their departure and destination locations to view a list of suitable bus options.</h6>
+                    <h6 class="card-text">See Bookings: After users have successfully booked their bus tickets, they should have access to a section where they can view their current and past bookings. This helps users keep track of their travel history and allows them to manage their reservations efficiently.</h6>
+                    <h6 class="card-text">Email Confirmation: When users complete the booking process, the system sends them an email confirmation containing all the relevant details of their reservation. This email confirmation serves as a proof of booking and contains important information such as the travel itinerary, seat number, boarding point, and departure time.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Book Your Bus Tickets Online</h3>
+            <p>Experience the ease of booking bus tickets online at SRM Bus Reservation. Choose from a wide range of available buses and routes to plan your journey conveniently. With our user-friendly interface, you can find bus availability, compare fares, and make instant bookings without any hassle.</p>
+            <a href="{% url 'searchbus' %}" class="btn btn-secondary">Grab Tickets</a>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/busbooking.jpg' %}" alt="Bus Booking" class="img-fluid rounded">
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{% static 'images/busroutes.jpg' %}" alt="Bus Routes" class="img-fluid rounded">
+        </div>
+        <div class="col-md-6 ">
+            <h3>Explore Various Bus Routes</h3>
+            <p>Discover a wide network of bus routes to travel across cities and regions. Our bus reservation system covers multiple destinations, ensuring you can find a suitable bus for your journey. Browse through the available routes and select the one that fits your travel plans.</p>
+            <a href="{% url 'findbus' %}" class="btn btn-dark">Find Bus</a>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Safe and Secure Travel</h3>
+            <p>Your safety is our priority. We partner with reputed bus operators who adhere to strict safety measures. Enjoy a comfortable and secure journey with our reliable bus services. All our buses are equipped with safety features to ensure your peace of mind during the travel.</p>
+            <a href="{% url 'safety' %}" class="btn btn-dark">Safety Measures</a>
+        </div>
+        <div class="col-md-6">
+            <img src="{% static 'images/bussafety.jpg' %}" alt="Bus Safety" class="img-fluid rounded">
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 class="sub-title">Enquiry</h1>
+            <h5>please contact details for any enquiry</h5>
+            <p><i class="fas fa-paper-plane"></i> Mail: srmcorporationservices@gmail.com</p>
+            <p><i class="fas fa-phone-square-alt"></i> ph: 9509786598</p>
+        </div>
+    </div>
+</div>
+
+
+
+  </body>
+</html>
+
+{% endblock %}

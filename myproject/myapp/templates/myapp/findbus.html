@@ -1,0 +1,52 @@
+{% extends 'myapp/base.html' %}
+{% block title %}FindBus{% endblock %}
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
+            <div class="card rounded-0">
+                <div class="card-header">
+                    <div class="card-title h3 mb-0">Find Bus</div>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <form action="{% url 'findbus' %}" method="post" id="find-form">
+                            {% csrf_token %}
+                            <div class="mb-3">
+                                <label for="source" class="control-label">From</label>
+                                <select name="source" class="form-control rounded-0" id="source" required>
+                                    <option value="">Select From</option>
+                                    {% for city in cities %}
+                                        <option value="{{ city.name }}">{{ city.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="destination" class="control-label">Destination</label>
+                                <select name="destination" id="destination" class="form-control rounded-0" required>
+                                    <option value="">Select Destination</option>
+                                    {% for city in cities %}
+                                        <option value="{{ city.name }}">{{ city.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="date" class="control-label">Date</label>
+                                <input name="date" id="date" class="form-control rounded-0" type="date" value="{% if data.date %}{{data.date}}{% endif %}" required>
+                            </div>
+                            {% if error %}
+                            <div class="alert alert-danger">
+                                {{error}}
+                            </div>
+                            {% endif %}
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-sm rounded-0 btn-success w-100" form="find-form">Find</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
